@@ -1,0 +1,41 @@
+<div class="login-container">
+  <div class="login-header">
+    <h5>Contract <span>Portal</span></h5>
+    <h6>Terms of Servie | Privacy Policy</h6>
+  </div>
+  <div class="login-form">
+    <div class="user-details">
+      <h2>Welcome back</h2>
+      <form [formGroup]="loginForm">
+        <div class="user-email-password">
+          <div>
+            <input type="email" placeholder="User/Email" formControlName="email">
+            <div class="error-msg" *ngIf="isError && loginForm.controls.email.errors?.required">
+              *Required
+            </div>
+            <div class="error-msg" *ngIf="isError && loginForm.controls.email.errors?.email">
+              Please Enter Valid Email
+            </div>
+          </div>
+          <div>
+            <input type="password" placeholder="Password" formControlName="password">
+            <div class="error-msg" *ngIf="isError && loginForm.controls.password.errors?.required">
+              *Required
+            </div>
+          </div>
+        </div>
+      </form>
+      <div class="forgot-password">
+        <div class="stay-signin">
+          <input type="checkbox">
+          <p>Stay Signed In</p>
+        </div>
+        <h4>Forgot Your Password?</h4>
+      </div>
+      <div class="login-btn">
+        <button (click)="userLogin()">Login</button>
+        <p>Don't have account? <span routerLink="../register">Sign Up</span></p>
+      </div>
+    </div>
+  </div>
+</div>

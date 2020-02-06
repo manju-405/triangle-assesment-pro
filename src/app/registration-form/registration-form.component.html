@@ -1,0 +1,79 @@
+<div class="registration-form">
+  <h1>Create User</h1>
+  <form [formGroup]="registarionForm">
+    <div class="registarion-details">
+      <div>
+        <h4>Username</h4>
+        <input type="text" formControlName="userName">
+        <div class="error-msg" *ngIf="isError && registarionForm.controls.userName.errors?.required">
+          *Required
+        </div>
+      </div>
+      <div>
+        <h4>Email</h4>
+        <input type="text" formControlName="email">
+        <div class="error-msg" *ngIf="isError && registarionForm.controls.email.errors?.required">
+          *Required
+        </div>
+        <div class="error-msg" *ngIf="isError && registarionForm.controls.email.errors?.email">
+          Please Enter Valid Email
+        </div>
+      </div>
+      <div>
+        <h4>Password</h4>
+        <input type="password" formControlName="password">
+        <div class="error-msg" *ngIf="isError && registarionForm.controls.password.errors?.required">
+          *Required
+        </div>
+      </div>
+      <div>
+        <h4>Confirm Password</h4>
+        <input type="password" formControlName="confirmPassword">
+      </div>
+      <div>
+        <h4>Display</h4>
+        <input type="text" formControlName="display">
+      </div>
+      <div>
+        <h4>Name</h4>
+        <div class="name-form">
+          <input type="text" placeholder="First" formControlName="firstName">
+          <div class="error-msg" *ngIf="isError && registarionForm.controls.firstName.errors?.required">
+            *Required
+          </div>
+          <input type="text" placeholder="Last" formControlName="lastName">
+          <div class="error-msg" *ngIf="isError && registarionForm.controls.lastName.errors?.required">
+            *Required
+          </div>
+        </div>
+      </div>
+      <div>
+        <h4>Nick Name</h4>
+        <input type="text" formControlName="nickName">
+      </div>
+      <div>
+        <h4>Website</h4>
+        <input type="text" formControlName="website">
+      </div>
+      <div>
+        <h4>Bio</h4>
+        <textarea name="" id="" cols="20" rows="5" formControlName="bio"></textarea>
+      </div>
+      <div>
+        <h4>Jabber</h4>
+        <input type="text" formControlName="jabber">
+      </div>
+      <div>
+        <h4>AOL IM</h4>
+        <input type="text" formControlName="aolim">
+      </div>
+      <div>
+        <h4>Yahoo IM</h4>
+        <input type="text" formControlName="yahooim">
+      </div>
+    </div>
+  </form>
+  <div class="create-btn">
+    <button (click)="formSubmit()">CREATE AND ACCESS</button>
+  </div>
+</div>
